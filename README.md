@@ -29,3 +29,20 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Docker
+
+```
+$ docker build -t grpc .
+$ docker run -p 50051:50051 grpc
+```
+
+```
+$ test-cli.sh
+hero.HeroesService@localhost:50051> call FindOne
+id (TYPE_INT32) => 1
+{
+  "id": 1,
+  "name": "John"
+}
+```
